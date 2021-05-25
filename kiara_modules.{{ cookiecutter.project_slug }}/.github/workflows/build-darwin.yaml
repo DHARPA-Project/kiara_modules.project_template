@@ -5,7 +5,6 @@ env:
   DEVELOPER_DIR: /Applications/Xcode_12.4.app/Contents/Developer
   MACOSX_DEPLOYMENT_TARGET: 10.13
 
-{% raw %}
 jobs:
   test-darwin:
     name: pytest on darwin
@@ -14,13 +13,12 @@ jobs:
       matrix:
         python_version: [3.6, 3.7, 3.8, 3.9]
     steps:
-      - name: "Set up Python ${{ matrix.python_version }}"
+      - name: "Set up Python {% raw %}${{ matrix.python_version }}{% endraw %}"
         uses: actions/setup-python@v2
         with:
-          python-version: "${{ matrix.python_version }}"
+          python-version: "{% raw %}${{ matrix.python_version }}{% endraw %}"
       - uses: actions/checkout@v2
       - name: install kiara_modules.{{ cookiecutter.project_slug }}
-        run: pip install -U pip install --pre --extra-index-url https://pypi.fury.io/dharpa/ .[all,dev_testing]
+        run: pip install -U --pre --extra-index-url https://pypi.fury.io/dharpa/ .[all,dev_testing]
       - name: Test with pytest
         run: make test
-{% endraw %}
