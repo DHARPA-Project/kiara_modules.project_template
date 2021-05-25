@@ -42,7 +42,7 @@ class ExampleModule(KiaraModule):
         This example module can be tested on the commandline with the ``kiara run`` command:
 
         ```
-        kiara run network_analysis-example text_1="xxx" text_2="yyy"
+        kiara run {{ cookiecutter.project_slug }}_example text_1="xxx" text_2="yyy"
         ```
 
     """
