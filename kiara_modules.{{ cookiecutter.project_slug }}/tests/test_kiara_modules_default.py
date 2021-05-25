@@ -5,9 +5,9 @@
 
 import pytest  # noqa
 
-import kiara_modules.language_processing
+import kiara_modules.{{ cookiecutter.project_slug }}
 
 
 def test_assert():
 
-    assert kiara_modules.language_processing.get_version() is not None
+    assert kiara_modules.{{ cookiecutter.project_slug }}.get_version() is not None
