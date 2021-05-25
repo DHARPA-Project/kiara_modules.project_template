@@ -13,7 +13,7 @@ jobs:
       - name: "Set up Python {% raw %}${{ matrix.python_version }}{% endraw %}"
         uses: actions/setup-python@v2
         with:
-          python-version: "${{ matrix.python_version }}"
+          python-version: "{% raw %}${{ matrix.python_version }}{% endraw %}"
       - uses: actions/checkout@v2
       - name: install kiara_modules.{{ cookiecutter.project_slug }}
         run: pip install -U --pre --extra-index-url https://pypi.fury.io/dharpa/ .[all,dev_testing]
