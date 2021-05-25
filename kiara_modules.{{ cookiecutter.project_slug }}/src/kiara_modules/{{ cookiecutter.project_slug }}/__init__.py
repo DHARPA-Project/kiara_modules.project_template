@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 
+"""Top-level package for kiara_modules.{{ cookiecutter.project_slug }}."""
+
+
 import logging
 import os
-
-log = logging.getLogger("kiara_modules")
-
-"""Top-level package for kiara_modules.default."""
 
 
 __author__ = """{{ cookiecutter.full_name }}"""
 __email__ = "{{ cookiecutter.email }}"
+
+log = logging.getLogger("kiara_modules")
 
 
 def get_version():

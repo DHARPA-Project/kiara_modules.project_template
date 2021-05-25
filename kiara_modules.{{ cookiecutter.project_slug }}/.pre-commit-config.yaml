@@ -43,7 +43,7 @@ repos:
   - id: mypy
     files: "^src/"
     pass_filenames: true
-    args: ["--config-file", "setup.cfg", "--ignore-missing-imports"]
+    args: ["--config-file", "setup.cfg", "--ignore-missing-imports", "--explicit-package-bases"]
     additional_dependencies: [pydantic>=1.8.0, rich>=10.0.0, ruamel.yaml]
 
 
