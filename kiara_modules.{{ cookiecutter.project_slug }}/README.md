@@ -42,7 +42,7 @@ make init
 After this is done, you should be able to run the included example module via:
 
 ```console
-kiara run {{ cookiecutter_slug }}_example text_1="xxx" text_2="yyy"
+kiara run {{ cookiecutter.project_slug }}_example text_1="xxx" text_2="yyy"
 ...
 ...
 ```
