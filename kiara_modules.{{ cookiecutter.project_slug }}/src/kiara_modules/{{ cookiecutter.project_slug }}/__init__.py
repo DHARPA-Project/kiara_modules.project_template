@@ -15,7 +15,7 @@ __email__ = "{{ cookiecutter.email }}"
 log = logging.getLogger("kiara_modules")
 
 modules: KiaraEntryPointItem = (find_kiara_modules_under, ["kiara_modules.{{ cookiecutter.project_slug }}"])
-pipelines: KiaraEntryPointItem = (find_kiara_pipelines_under, "kiara_modules.{{ cookiecutter.project_slug }}")
+pipelines: KiaraEntryPointItem = (find_kiara_pipelines_under, ["kiara_modules.{{ cookiecutter.project_slug }}"])
 
 def get_version():
     from pkg_resources import DistributionNotFound, get_distribution
