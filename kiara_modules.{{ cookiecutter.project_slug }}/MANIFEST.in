@@ -12,3 +12,4 @@ recursive-exclude * *.py[co]
 
 recursive-include docs *.md *.jpg *.png *.gif
 recursive-include src/kiara_modules/{{ cookiecutter.project_slug }}/resources *
+recursive-include src/kiara_modules/{{ cookiecutter.project_slug }}/pipelines *
