@@ -12,12 +12,14 @@ from kiara import KiaraEntryPointItem, find_kiara_modules_under, \
 __author__ = """{{ cookiecutter.full_name }}"""
 __email__ = "{{ cookiecutter.email }}"
 
+from kiara.utils.class_loading import find_metadata_schemas_under, find_value_types_under
+
 log = logging.getLogger("kiara_modules")
 
-metadata_schemas: KiaraEntryPointItem = (find_kiara_modules_under, ["kiara_modules.{{ cookiecutter.project_slug }}.metadata_schemas"])
+metadata_schemas: KiaraEntryPointItem = (find_metadata_schemas_under, ["kiara_modules.{{ cookiecutter.project_slug }}.metadata_schemas"])
 modules: KiaraEntryPointItem = (find_kiara_modules_under, ["kiara_modules.{{ cookiecutter.project_slug }}"])
 pipelines: KiaraEntryPointItem = (find_kiara_pipelines_under, ["kiara_modules.{{ cookiecutter.project_slug }}"])
-value_types: KiaraEntryPointItem = (find_kiara_modules_under, ["kiara_modules.{{ cookiecutter.project_slug }}.value_types"])
+value_types: KiaraEntryPointItem = (find_value_types_under, ["kiara_modules.{{ cookiecutter.project_slug }}.value_types"])
 
 def get_version():
     from pkg_resources import DistributionNotFound, get_distribution
