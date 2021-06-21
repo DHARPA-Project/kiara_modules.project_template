@@ -12,12 +12,32 @@ from kiara import KiaraEntryPointItem, find_kiara_modules_under, \
 __author__ = """{{ cookiecutter.full_name }}"""
 __email__ = "{{ cookiecutter.email }}"
 
-from kiara.utils.class_loading import find_metadata_schemas_under, find_value_types_under
-
 log = logging.getLogger("kiara_modules")
+
+KIARA_METADATA = {
+    "authors": [
+        {"name": __author__, "email": __email__}
+    ],
+    "description": "Kiara modules for: {{ cookiecutter.project_title }}",
+    "references": {
+        "homepage": {
+            "desc": "The module package homepage.",
+            "url": "https://github.com/DHARPA-Project/kiara_modules.{{ cookiecutter.project_slug }}",
+        },
+        "documentation": {
+            "desc": "The url for the module package documentation.",
+            "url": "https://dharpa.org/kiara_modules.{{ cookiecutter.project_slug }}/",
+        },
+    },
+    "tags": ["{{ cookiecutter.project_slug }}"],
+    "labels": {
+        "package": "kiara_modules.{{ cookiecutter.project_slug }}"
+    }
+}
 
 modules: KiaraEntryPointItem = (find_kiara_modules_under, ["kiara_modules.{{ cookiecutter.project_slug }}"])
 pipelines: KiaraEntryPointItem = (find_kiara_pipelines_under, ["kiara_modules.{{ cookiecutter.project_slug }}"])
+
 
 def get_version():
     from pkg_resources import DistributionNotFound, get_distribution
