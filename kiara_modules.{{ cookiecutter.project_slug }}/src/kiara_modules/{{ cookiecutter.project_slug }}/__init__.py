@@ -18,7 +18,7 @@ KIARA_METADATA = {
     "authors": [
         {"name": __author__, "email": __email__}
     ],
-    "description": "Kiara modules for: {{ cookiecutter.project_title }}",
+    "description": "Kiara modules for: {{ cookiecutter.project_name }}",
     "references": {
         "homepage": {
             "desc": "The module package homepage.",
