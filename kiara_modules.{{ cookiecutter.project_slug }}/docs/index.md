@@ -15,16 +15,16 @@ TODO
 
 ### [Pipelines](https://dharpa.org/kiara/modules/pipeline_modules/)
 
-{{ get_module_list_for_package('kiara_modules.{{ cookiecutter.project_slug }}', include_core_modules=False) }}
+{% raw %}{{{% endraw %} get_module_list_for_package('kiara_modules.{{ cookiecutter.project_slug }}', include_core_modules=False) {% raw %}}}{% endraw %}
 
 
 ### Value types
 
-{{ get_value_types_for_package('kiara_modules.{{ cookiecutter.project_slug }}') }}
+{% raw %}{{ get_value_types_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
 
 ### Metadata schemas
 
-{{ get_metadata_schemas_for_package('kiara_modules.{{ cookiecutter.project_slug }}') }}
+{% raw %}{{ get_metadata_schemas_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
 
 ## Links
 
