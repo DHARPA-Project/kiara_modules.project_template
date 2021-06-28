@@ -22,6 +22,7 @@ markdown_extensions:
 
 nav:
 - Home: index.md
+- Usage: usage.md
 - Included modules: modules_list.md
 - Included pipelines: pipelines_list.md
 
@@ -41,3 +42,4 @@ plugins:
 - gen-files:
     scripts:
       - scripts/documentation/gen_module_doc.py
+

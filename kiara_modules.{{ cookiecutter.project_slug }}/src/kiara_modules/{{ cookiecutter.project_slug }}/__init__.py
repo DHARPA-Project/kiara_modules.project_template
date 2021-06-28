@@ -6,8 +6,7 @@
 import logging
 import os
 
-from kiara import KiaraEntryPointItem, find_kiara_modules_under, \
-    find_pipeline_base_path_for_module
+from kiara import KiaraEntryPointItem, find_kiara_modules_under
 
 __author__ = """{{ cookiecutter.full_name }}"""
 __email__ = "{{ cookiecutter.email }}"
