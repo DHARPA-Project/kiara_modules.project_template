@@ -11,7 +11,7 @@ TODO
 
 ### [Core modules](https://dharpa.org/kiara/modules/core_modules/)
 
-{{ get_module_list_for_package('kiara_modules.{{ cookiecutter.project_slug }}', include_pipelines=False) }}
+{% raw %}{{{% endraw %} get_module_list_for_package('kiara_modules.{{ cookiecutter.project_slug }}', include_pipelines=False) {% raw %}}}{% endraw %}
 
 ### [Pipelines](https://dharpa.org/kiara/modules/pipeline_modules/)
 
@@ -20,11 +20,11 @@ TODO
 
 ### Value types
 
-{% raw %}{{ get_value_types_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
+{% raw %}{{{% endraw %} get_value_types_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
 
 ### Metadata schemas
 
-{% raw %}{{ get_metadata_schemas_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
+{% raw %}{{{% endraw %} get_metadata_schemas_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
 
 ## Links
 
