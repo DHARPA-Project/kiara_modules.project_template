@@ -7,7 +7,7 @@ import logging
 import os
 
 from kiara import KiaraEntryPointItem, find_kiara_modules_under, \
-    find_kiara_pipelines_under
+    find_pipeline_base_path_for_module
 
 __author__ = """{{ cookiecutter.full_name }}"""
 __email__ = "{{ cookiecutter.email }}"
@@ -20,8 +20,8 @@ KIARA_METADATA = {
     ],
     "description": "Kiara modules for: {{ cookiecutter.project_name }}",
     "references": {
-        "homepage": {
-            "desc": "The module package homepage.",
+        "source_repo": {
+            "desc": "The module package git repository.",
             "url": "https://github.com/DHARPA-Project/kiara_modules.{{ cookiecutter.project_slug }}",
         },
         "documentation": {
