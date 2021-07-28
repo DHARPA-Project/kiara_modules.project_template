@@ -73,11 +73,11 @@ you'll need to navigate to the directory again (wherever that is, in your case),
 
 ```console
 cd path/to/kiara_modules.{{ cookiecutter.project_slug }}
-source .venv/bin/activate
+source .venv/bin/activate  # if it isn't activated already, for example by the Anaconda navigator
 kiara --help  # or whatever, point is, kiara should be available for you now,
 ```
 
-### ``make`` targets
+### ``make`` targets (Linux & Mac OS X)
 
 - ``init``: init development project (install project & dev dependencies into virtualenv, as well as pre-commit git hook)
 - ``update-dependencies``: update development dependencies (mainly the core ``kiara`` package from git)
