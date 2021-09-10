@@ -32,7 +32,7 @@ check the notes on how to setup a *Kiara* development environment under (TODO).
 
 #### Linux & Mac OS X (using make)
 
-For UNI*-like operating system, setting up a development environment is relatively easy:
+For *NIX-like operating system, setting up a development environment is relatively easy:
 
 ```console
 git clone https://github.com/DHARPA-Project/kiara_modules.{{ cookiecutter.project_slug }}.git
