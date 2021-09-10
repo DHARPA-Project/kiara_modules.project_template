@@ -37,7 +37,7 @@ jobs:
 #      - name: Upload coverage data to coveralls.io
 #        run: coveralls --service=github
 #        env:
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+#          GITHUB_TOKEN:  {% raw %}${{ secrets.GITHUB_TOKEN }}{% endraw %}""
 
   mypy-linux:
     name: mypy check on linux
@@ -91,10 +91,10 @@ jobs:
       - run: git config --global user.email "{{ cookiecutter.full_name }}"
       - run: git config --global user.name "{{ cookiecutter.email }}"
       - name: create latest documentation
-        if: ${{ ( github.ref == 'refs/heads/develop') }}
+        if: {% raw %}${{ ( github.ref == 'refs/heads/develop') }}{% endraw %}""
         run: FAIL_DOC_BUILD_ON_ERROR=true mike deploy --push latest && mike set-default --push latest
       - name: create stable documentation
-        if: ${{ startsWith(github.ref, 'refs/tags/') }}
+        if: {% raw %}${{ startsWith(github.ref, 'refs/tags/') }}{% endraw %}""
         run: FAIL_DOC_BUILD_ON_ERROR=true mike deploy --push --update-alias ${RELEASE_VERSION} stable
 
   release_package:
@@ -130,4 +130,4 @@ jobs:
         uses: pypa/gh-action-pypi-publish@master
         with:
           user: __token__
-          password: ${{ secrets.PYPI_API_TOKEN }}
+          password: {% raw %}${{ secrets.PYPI_API_TOKEN }}{% endraw %}""
