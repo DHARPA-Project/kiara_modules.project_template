@@ -151,7 +151,7 @@ jobs:
   merge_tag_to_main:
     name: merge current tag to main branch
     runs-on: ubuntu-latest
-    if: ${{ startsWith(github.ref, 'refs/tags') }}
+    if: {% raw %}${{ startsWith(github.ref, 'refs/tags') }}{% endraw %}
     needs:
       - test-linux
       - mypy-linux
