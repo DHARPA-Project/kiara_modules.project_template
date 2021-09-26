@@ -56,3 +56,11 @@ site
 .mypy_cache
 .env
 docs/api-documentation.md
+.frkl
+.envrc
+build.sh
+onefile.spec
+*_complete.zsh.zwc
+ci/conda/**/build
+ci/conda/kiara_modules.{{ cookiecutter.project_slug }}/meta.yaml
+
