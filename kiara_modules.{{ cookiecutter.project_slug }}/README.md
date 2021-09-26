@@ -7,7 +7,7 @@
 
 # *kiara* modules ({{ cookiecutter.project_name }})
 
-A set of commonly used/useful default modules (and pipelines) for [*Kiara*](https://github.com/DHARPA-project/kiara).
+A set of modules (and pipelines) for [*Kiara*](https://github.com/DHARPA-project/kiara).
 
  - Documentation: [https://dharpa.org/kiara_modules.{{ cookiecutter.project_slug }}](https://dharpa.org/kiara_modules.{{ cookiecutter.project_slug }})
  - Code: [https://github.com/DHARPA-Project/kiara_modules.{{ cookiecutter.project_slug }}](https://github.com/DHARPA-Project/kiara_modules.{{ cookiecutter.project_slug }})
