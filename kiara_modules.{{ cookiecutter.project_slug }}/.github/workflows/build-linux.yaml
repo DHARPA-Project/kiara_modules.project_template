@@ -148,6 +148,7 @@ jobs:
   test_conda_package_build:
     name: test conda package build
     runs-on: ubuntu-latest
+    if: {% raw %}${{ startsWith(github.ref, 'refs/tags') != true }}{% endraw %}
     env:
       ANACONDA_PUSH_TOKEN: {% raw %}${{ secrets.ANACONDA_PUSH_TOKEN }}{% endraw %}
     steps:
@@ -156,7 +157,7 @@ jobs:
       - name: install conda build packages
         run: conda install conda-build anaconda-client
       - name: build conda package
-        run: cd ci/conda/ && ./build-conda-packages.sh "kiara_modules.{{ cookiecutter.project_slug }}" 0.0.1
+        run: cd ci/conda/ && ./build-conda-packages.sh "kiara_modules.{{ cookiecutter.project_slug }}" develop
 
   publish_conda_package:
     name: publish conda package
