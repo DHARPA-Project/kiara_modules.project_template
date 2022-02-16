@@ -182,7 +182,7 @@ jobs:
       matrix:
         python_version: ["3.8", "3.9", "3.10"]
     env:
-      ANACONDA_PUSH_TOKEN: ${{ secrets.ANACONDA_PUSH_TOKEN }}
+      ANACONDA_PUSH_TOKEN: {% raw %}${{ secrets.ANACONDA_PUSH_TOKEN }}{% endraw %}
     needs:
       - test-linux
       - mypy-linux
