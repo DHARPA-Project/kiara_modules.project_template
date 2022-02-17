@@ -150,19 +150,6 @@ jobs:
     name: test conda package build
     runs-on: ubuntu-latest
     if: {% raw %}${{ startsWith(github.ref, 'refs/tags') != true }}{% endraw %}
-    env:
-      ANACONDA_PUSH_TOKEN: {% raw %}${{ secrets.ANACONDA_PUSH_TOKEN }}{% endraw %}
-    steps:
-      - uses: actions/checkout@v1
-      - uses: conda-incubator/setup-miniconda@v2
-      - name: install conda build packages
-        run: conda install conda-build anaconda-client
-      - name: build conda package
-
-  test_conda_package_build_3_8:
-    name: test conda package build
-    runs-on: ubuntu-latest
-    if: {% raw %}${{ startsWith(github.ref, 'refs/tags') != true }}{% endraw %}
     strategy:
       matrix:
         python_version: ["3.8", "3.9", "3.10"]
@@ -194,7 +181,7 @@ jobs:
           auto-activate-base: false
           activate-environment: "anaconda-build-env"
       - name: install conda build packages
-        run: conda install -n anaconda-build-env conda-build anaconda-client
+        run: conda install -c conda-forge -n anaconda-build-env conda-build anaconda-client boa
       - name: build conda package
         shell: bash -l {0}
         run: conda activate anaconda-build-env && cd ci/conda/ && ./build-conda-packages.sh "kiara_modules.{{ cookiecutter.project_slug }}" "${GITHUB_REF#refs/*/}" {% raw %}"${{ matrix.python_version }}"{% endraw %} false
