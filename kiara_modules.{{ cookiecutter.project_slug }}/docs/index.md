@@ -24,7 +24,7 @@ TODO
 
 ### Metadata schemas
 
-{% raw %}{{{% endraw %} get_metadata_schemas_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
+{% raw %}{{{% endraw %} get_metadata_models_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
 
 ## Links
 
