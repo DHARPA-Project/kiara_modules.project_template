@@ -180,8 +180,8 @@ jobs:
       ANACONDA_PUSH_TOKEN: {% raw %}${{ secrets.ANACONDA_PUSH_TOKEN }}{% endraw %}
     needs:
       - test-linux
-      - mypy-linux
-      - flake8-linux
+#      - mypy-linux
+#      - flake8-linux
     steps:
       - uses: actions/checkout@v1
       - uses: conda-incubator/setup-miniconda@v2
