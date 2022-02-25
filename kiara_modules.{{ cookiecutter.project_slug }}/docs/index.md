@@ -9,22 +9,12 @@ TODO
 
 ## Package content
 
-### [Core modules](https://dharpa.org/kiara/modules/core_modules/)
-
-{% raw %}{{{% endraw %} get_module_list_for_package('kiara_modules.{{ cookiecutter.project_slug }}', include_pipelines=False) {% raw %}}}{% endraw %}
-
-### [Pipelines](https://dharpa.org/kiara/modules/pipeline_modules/)
-
-{% raw %}{{{% endraw %} get_module_list_for_package('kiara_modules.{{ cookiecutter.project_slug }}', include_core_modules=False) {% raw %}}}{% endraw %}
-
-
-### Value types
-
-{% raw %}{{{% endraw %} get_value_types_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
-
-### Metadata schemas
-
-{% raw %}{{{% endraw %} get_metadata_models_for_package('kiara_modules.{{ cookiecutter.project_slug }}') {% raw %}}}{% endraw %}
+{% raw %}{%{% endraw %} for info_category, details in get_info_for_categories('metadata.value_type','metadata.module', 'metadata.operation_type', limit_to_package='kiara_modules.{{ cookiecutter.project_slug }}').items() {% raw %}%}
+### {{ details['title'] }}
+{% for item, desc in details['items'].items() %}- [{{ item }}][]: {{ desc }} 
+{% endfor %}
+{% endfor %}
+{% endraw %}
 
 ## Links
 
