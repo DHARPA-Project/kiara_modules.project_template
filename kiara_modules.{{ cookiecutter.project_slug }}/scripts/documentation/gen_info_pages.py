@@ -7,8 +7,12 @@ pkg_name = "kiara_modules.{{ cookiecutter.project_slug }}"
 kiara = Kiara.instance()
 
 value_types = kiara.type_mgmt.find_value_types_for_package(pkg_name)
-modules = kiara.module_mgmt.find_modules_for_package(pkg_name, include_core_modules=True, include_pipelines=False)
-pipelines = kiara.module_mgmt.find_modules_for_package(pkg_name, include_core_modules=False, include_pipelines=True)
+modules = kiara.module_mgmt.find_modules_for_package(
+    pkg_name, include_core_modules=True, include_pipelines=False
+)
+pipelines = kiara.module_mgmt.find_modules_for_package(
+    pkg_name, include_core_modules=False, include_pipelines=True
+)
 operation_types = kiara.operation_mgmt.find_operation_types_for_package(pkg_name)
 
 types = []
@@ -22,7 +26,9 @@ if operation_types:
     types.append("operation_type")
 
 type_details = generate_pages_and_summary_for_types(
-    kiara=kiara, types=types, limit_to_package="kiara_modules.{{ cookiecutter.project_slug }}"
+    kiara=kiara,
+    types=types,
+    limit_to_package="kiara_modules.{{ cookiecutter.project_slug }}",
 )
 
 summary_content = []
