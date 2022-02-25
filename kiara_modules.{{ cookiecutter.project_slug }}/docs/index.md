@@ -9,7 +9,7 @@ TODO
 
 ## Package content
 
-{% raw %}{%{% endraw %} for info_category, details in get_info_for_categories('metadata.value_type','metadata.module', 'metadata.operation_type', limit_to_package='kiara_modules.{{ cookiecutter.project_slug }}').items() {% raw %}%}
+{% raw %}{%{% endraw %} for info_category, details in get_info_for_categories('metadata.value_type','metadata.module', 'metadata.pipeline','metadata.operation_type', limit_to_package='kiara_modules.{{ cookiecutter.project_slug }}').items() {% raw %}%}
 ### {{ details['title'] }}
 {% for item, desc in details['items'].items() %}- [{{ item }}][]: {{ desc }} 
 {% endfor %}
