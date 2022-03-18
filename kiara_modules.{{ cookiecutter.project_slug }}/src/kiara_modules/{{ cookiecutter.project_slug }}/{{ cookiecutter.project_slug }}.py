@@ -4,10 +4,9 @@ import typing
 from pydantic import Field
 
 from kiara import KiaraModule
-from kiara.data.values import ValueSchema
-from kiara.data import ValueSet
-from kiara.module_config import ModuleTypeConfigSchema
-
+from kiara.models.values.value_schema import ValueSchema
+from kiara.models.values.value import ValueSet
+from kiara.models.module.manifest import ModuleTypeConfigSchema
 
 class ExampleModuleConfig(ModuleTypeConfigSchema):
 
