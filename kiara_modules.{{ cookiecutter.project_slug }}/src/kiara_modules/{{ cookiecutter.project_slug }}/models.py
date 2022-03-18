@@ -9,6 +9,6 @@ Metadata models must be a sub-class of [kiara.metadata.MetadataModel][kiara.meta
 sub-class a pydantic BaseModel or implement custom base classes.
 """
 from kiara import KiaraEntryPointItem
-from kiara.utils.class_loading import find_metadata_models_under
+from kiara.utils.class_loading import find_kiara_models_under
 
-value_metadata: KiaraEntryPointItem = (find_metadata_models_under, ["kiara_modules.{{ cookiecutter.project_slug }}.metadata_models"])
+value_metadata: KiaraEntryPointItem = (find_kiara_models_under, ["kiara_modules.{{ cookiecutter.project_slug }}.metadata_models"])
