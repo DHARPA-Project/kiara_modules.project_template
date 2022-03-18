@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
-import nltk
-import pyarrow as pa
+
 import typing
 from pydantic import Field
 
 from kiara import KiaraModule
 from kiara.data.values import ValueSchema
 from kiara.data import ValueSet
-from kiara.exceptions import KiaraProcessingException
 from kiara.module_config import ModuleTypeConfigSchema
 
 

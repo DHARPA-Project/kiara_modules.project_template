@@ -37,7 +37,7 @@ for name, details in type_details.items():
     summary_content.append(line)
 
 
-nav = ["* [Home](index.md)", "* [Usage](usage.md)", "* [Development](development.md)"]
+nav = ["* [Home](index.md)", "* [Usage](usage.md)"]
 nav.extend(summary_content)
 
 nav.append("* [API docs](reference/)")
