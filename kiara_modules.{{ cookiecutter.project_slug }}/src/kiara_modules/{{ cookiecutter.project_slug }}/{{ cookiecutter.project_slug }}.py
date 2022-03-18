@@ -54,8 +54,8 @@ class ExampleModule(KiaraModule):
     ]:
 
         inputs = {
-            "text_1": {"type_name": "string", "doc": "The first text."},
-            "text_2": {"type_name": "string", "doc": "The second text."},
+            "text_1": {"type": "string", "doc": "The first text."},
+            "text_2": {"type": "string", "doc": "The second text."},
         }
 
         return inputs
@@ -68,7 +68,7 @@ class ExampleModule(KiaraModule):
 
         outputs = {
             "text": {
-                "type_name": "string",
+                "type": "string",
                 "doc": "The concatenated text.",
             }
         }
