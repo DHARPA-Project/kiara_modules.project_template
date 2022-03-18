@@ -47,7 +47,7 @@ class ExampleModule(KiaraModule):
 
     _config_cls = ExampleModuleConfig
 
-    def create_input_schema(
+    def create_inputs_schema(
         self,
     ) -> typing.Mapping[
         str, typing.Union[ValueSchema, typing.Mapping[str, typing.Any]]
@@ -60,7 +60,7 @@ class ExampleModule(KiaraModule):
 
         return inputs
 
-    def create_output_schema(
+    def create_outputs_schema(
         self,
     ) -> typing.Mapping[
         str, typing.Union[ValueSchema, typing.Mapping[str, typing.Any]]
